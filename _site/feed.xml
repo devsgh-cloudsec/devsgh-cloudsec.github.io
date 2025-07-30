@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Chirpy</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2025-07-29T22:51:37+10:00</updated>
+  <updated>2025-07-30T10:11:22+10:00</updated>
   <author>
     <name>your_full_name</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,54 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Welcome to My Cloud Security Blog</title>
+    <link href="http://localhost:4000/posts/welcome/" rel="alternate" type="text/html" title="Welcome to My Cloud Security Blog" />
+    <published>2025-07-30T00:00:00+10:00</published>
+  
+    <updated>2025-07-30T00:00:00+10:00</updated>
+  
+    <id>http://localhost:4000/posts/welcome/</id>
+    <content type="text/html" src="http://localhost:4000/posts/welcome/" />
+    <author>
+      <name>your_full_name</name>
+    </author>
+
+  
+    
+    <category term="Cloud Security" />
+    
+  
+
+  <summary>This is my first post about cloud security…</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>My First Cloud Security Post</title>
+    <link href="http://localhost:4000/posts/first-post/" rel="alternate" type="text/html" title="My First Cloud Security Post" />
+    <published>2025-07-30T00:00:00+10:00</published>
+  
+    <updated>2025-07-30T00:00:00+10:00</updated>
+  
+    <id>http://localhost:4000/posts/first-post/</id>
+    <content type="text/html" src="http://localhost:4000/posts/first-post/" />
+    <author>
+      <name>your_full_name</name>
+    </author>
+
+  
+    
+    <category term="Cloud Security" />
+    
+  
+
+  <summary>Welcome to my cloud security blog! This is my first post about…</summary>
+
+  </entry>
 
 </feed>
 

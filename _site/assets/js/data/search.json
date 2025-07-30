@@ -1,4 +1,22 @@
 [
   
+  {
+    "title": "Welcome to My Cloud Security Blog",
+    "url": "/posts/welcome/",
+    "categories": "Cloud Security",
+    "tags": "welcome",
+    "date": "2025-07-30 00:00:00 +1000",
+    "content": "This is my first post about cloud security… "
+  },
+  
+  {
+    "title": "My First Cloud Security Post",
+    "url": "/posts/first-post/",
+    "categories": "Cloud Security",
+    "tags": "AWS, DevOps",
+    "date": "2025-07-30 00:00:00 +1000",
+    "content": "Welcome to my cloud security blog! This is my first post about… "
+  }
+  
 ]
 
