@@ -1,0 +1,83 @@
+# Site settings
+title: DevSGH CloudSec
+tagline: Cloud Security & DevOps Engineering
+description: >-
+  Professional insights on cloud security, DevOps practices,
+  and infrastructure automation. Join the journey of securing
+  and optimizing cloud environments at enterprise scale.
+
+# Site URL
+url: "https://cloudsec.github.io"
+baseurl: ""
+
+# Theme - REQUIRED for styling
+theme: jekyll-theme-chirpy
+
+# Author
+author:
+  name: Dev Singh
+  email: devsingh.cloud@gmail.com
+
+# Social links
+github:
+  username: devsgh-cloudsec
+
+social:
+  name: Dev Singh
+  email: devsingh.cloud@gmail.com
+  links:
+    - https://github.com/devsgh-cloudsec
+
+# Site configuration
+timezone: Australia/Melbourne
+lang: en
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /posts/:title/
+
+# Collections
+collections:
+  tabs:
+    output: true
+    sort_by: order
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      comments: true
+      toc: true
+  - scope:
+      path: _tabs
+    values:
+      layout: page
+
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-archives
+  - jekyll-sitemap
+  - jekyll-include-cache
+
+# Pagination
+paginate: 10
+paginate_path: /page:num/
+
+# Archives (for jekyll-archives)
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    category: /categories/:name/
+    tag: /tags/:name/
