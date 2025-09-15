@@ -4,7 +4,7 @@ Here’s the updated Markdown:
 
 ````md
 ---
-title: 🛠️ Fixing "This Virtual Machine is Encrypted" Error in VMware Workstation
+title: 🛠️ "Fixing 'This Virtual Machine is Encrypted' Error in VMware Workstation"
 date: 2025-09-15 10:00:00 +1000
 categories: [Tutorials, VMware]
 tags: [VMware, Encryption, vTPM, Windows 11, Virtual Machine]
