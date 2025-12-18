@@ -1,6 +1,6 @@
 ---
 title: "🔐 From Network Disaster to Enterprise Architecture: Rebuilding After a Security Incident"
-date: 2025-04-05 10:00:00 +1000
+date: 2024-04-05 10:00:00 +1000
 categories: [Networking, Security, Architecture]
 tags: [pfSense, VLAN, Network-Architecture, Security-Design, Enterprise-Network]
 pin: true
