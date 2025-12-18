@@ -1,0 +1,316 @@
+/* Custom Professional Styling for DevSGH CloudSec Blog */
+
+/* Improve typography and readability */
+.post-content {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+.post-content h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e9ecef;
+  font-weight: 700;
+}
+
+.post-content h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #495057;
+}
+
+/* Improve code blocks */
+.post-content pre {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+}
+
+.post-content code {
+  background: #f8f9fa;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #e83e8c;
+}
+
+.post-content pre code {
+  background: transparent;
+  padding: 0;
+  color: inherit;
+}
+
+/* Improve blockquotes */
+.post-content blockquote {
+  border-left: 4px solid #007bff;
+  background: #f8f9fa;
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.post-content blockquote p {
+  margin: 0;
+  font-style: italic;
+  color: #495057;
+}
+
+/* Improve lists */
+.post-content ul,
+.post-content ol {
+  margin: 1.2rem 0;
+  padding-left: 2rem;
+}
+
+.post-content li {
+  margin: 0.5rem 0;
+  line-height: 1.7;
+}
+
+/* Checklist styling */
+.post-content ul li:before {
+  content: '';
+}
+
+.post-content li:has(input[type="checkbox"]) {
+  list-style: none;
+  margin-left: -1.5rem;
+}
+
+/* Improve horizontal rules */
+.post-content hr {
+  margin: 3rem 0;
+  border: 0;
+  border-top: 2px solid #e9ecef;
+}
+
+/* Post metadata styling */
+.post-meta {
+  color: #6c757d;
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+}
+
+.post-meta .pin-icon {
+  color: #007bff;
+}
+
+/* Improve post preview cards on homepage */
+.card-wrapper .card {
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  overflow: hidden;
+}
+
+.card-wrapper .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border-color: #007bff;
+}
+
+.card .card-body {
+  padding: 1.5rem;
+}
+
+.card .card-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.card .card-title a {
+  color: #212529;
+  text-decoration: none;
+}
+
+.card .card-title a:hover {
+  color: #007bff;
+}
+
+.card .post-preview {
+  color: #6c757d;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Improve tags */
+.tag {
+  display: inline-block;
+  background: #e9ecef;
+  color: #495057;
+  padding: 0.25rem 0.75rem;
+  border-radius: 16px;
+  font-size: 0.85rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.tag:hover {
+  background: #007bff;
+  color: white;
+  text-decoration: none;
+}
+
+/* Improve mermaid diagrams */
+.mermaid {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+  border: 1px solid #dee2e6;
+}
+
+/* Improve tables */
+.post-content table {
+  width: 100%;
+  margin: 1.5rem 0;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.post-content table th {
+  background: #007bff;
+  color: white;
+  font-weight: 600;
+  padding: 1rem;
+  text-align: left;
+}
+
+.post-content table td {
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.post-content table tr:last-child td {
+  border-bottom: none;
+}
+
+.post-content table tr:hover {
+  background: #f8f9fa;
+}
+
+/* Improve sidebar */
+#sidebar {
+  background: #f8f9fa;
+}
+
+#sidebar .site-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #212529;
+}
+
+#sidebar .site-subtitle {
+  color: #6c757d;
+  font-size: 0.95rem;
+}
+
+/* Recently Updated section */
+.recently-updated {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.recently-updated h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #212529;
+}
+
+/* Trending Tags */
+.trending-tags {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.trending-tags h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #212529;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .post-content {
+    font-size: 1rem;
+  }
+  
+  .card .card-title {
+    font-size: 1.2rem;
+  }
+  
+  .mermaid {
+    padding: 1rem;
+    overflow-x: auto;
+  }
+}
+
+/* Dark mode improvements */
+html[data-mode="dark"] .post-content {
+  color: #e9ecef;
+}
+
+html[data-mode="dark"] .post-content h2,
+html[data-mode="dark"] .post-content h3 {
+  color: #f8f9fa;
+  border-color: #495057;
+}
+
+html[data-mode="dark"] .post-content pre {
+  background: #2d3436;
+  border-color: #495057;
+}
+
+html[data-mode="dark"] .post-content code {
+  background: #2d3436;
+  color: #ff79c6;
+}
+
+html[data-mode="dark"] .post-content blockquote {
+  background: #2d3436;
+  border-left-color: #0d6efd;
+  color: #e9ecef;
+}
+
+html[data-mode="dark"] .mermaid {
+  background: #2d3436;
+  border-color: #495057;
+}
+
+html[data-mode="dark"] .card {
+  background: #2d3436;
+  border-color: #495057;
+}
+
+html[data-mode="dark"] .card:hover {
+  border-color: #0d6efd;
+}
+
+html[data-mode="dark"] .tag {
+  background: #495057;
+  color: #e9ecef;
+}
+
+html[data-mode="dark"] .tag:hover {
+  background: #0d6efd;
+}

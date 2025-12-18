@@ -13,6 +13,10 @@ baseurl: ""
 # Theme - REQUIRED for styling
 theme: jekyll-theme-chirpy
 
+# Custom CSS
+css:
+  - /assets/css/custom.css
+
 # Author
 author:
   name: Dev Singh
@@ -35,6 +39,8 @@ lang: en
 # Build settings
 markdown: kramdown
 highlighter: rouge
+mermaid:
+  enable: true
 permalink: /posts/:title/
 
 # Collections
@@ -65,7 +71,8 @@ plugins:
   - jekyll-archives
   - jekyll-sitemap
   - jekyll-include-cache
-
+  - jekyll-mermaid
+  
 # Pagination
 paginate: 10
 paginate_path: /page:num/
