@@ -314,3 +314,14 @@ html[data-mode="dark"] .tag {
 html[data-mode="dark"] .tag:hover {
   background: #0d6efd;
 }
+
+/* Fix featured image banner - show full image without cropping */
+.post-preview img,
+article > .post-meta > .post-img-wrapper > img,
+#post-wrapper .post-meta .post-img-wrapper > img {
+  object-fit: contain !important;
+  max-height: 600px !important;
+  width: 100% !important;
+  height: auto !important;
+  background: #f8f9fa;
+}
