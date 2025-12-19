@@ -10,6 +10,7 @@ group :jekyll_plugins do
   gem "jekyll-archives"
   gem "jekyll-sitemap"
   gem "jekyll-include-cache"
+  gem "jekyll-mermaid" 
 end
 
 gem "html-proofer", "~> 5.0", group: :test

@@ -97,6 +97,7 @@ GEM
       jekyll (>= 3.6, < 5.0)
     jekyll-include-cache (0.2.1)
       jekyll (>= 3.7, < 5.0)
+    jekyll-mermaid (1.0.0)
     jekyll-paginate (1.1.0)
     jekyll-redirect-from (0.16.0)
       jekyll (>= 3.3, < 5.0)
@@ -205,6 +206,7 @@ DEPENDENCIES
   html-proofer (~> 5.0)
   jekyll-archives
   jekyll-include-cache
+  jekyll-mermaid
   jekyll-paginate
   jekyll-redirect-from
   jekyll-seo-tag
