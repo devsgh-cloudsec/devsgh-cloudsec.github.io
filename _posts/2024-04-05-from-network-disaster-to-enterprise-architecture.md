@@ -6,7 +6,7 @@ tags: [pfSense, VLAN, Network-Architecture, Security-Design, Enterprise-Network]
 pin: true
 mermaid: true
 image:
-  path: /assets/img/Cranbourne_Ave_Network_Diagram-ORIGINAL.png
+  path: /assets/img/Redesigned_Network_Diagram_With_Segmentation.png
   alt: Professional home network architecture with enterprise-grade segmentation
 ---
 
@@ -18,7 +18,7 @@ image:
 
 **March 2020.** My neighbor **Elton** had just lost his job. He needed internet to apply for work. I gave him my WiFi password.
 
-Three days later, my network was infected. His PC had malware that spread through my completely flat network topology—every device on the same subnet, no segmentation, no isolation. My NAS was compromised, work laptop infected, smart devices acting strangely.
+Three days later, my network was infected. His PC had malware that spread through my completely flat network topology—every device on the same subnet, no segmentation, no isolation. My NAS was compromised, laptop infected, smart devices acting strangely.
 
 **That weekend, I made a decision:** Don't just fix it. **Redesign it properly.**
 
@@ -26,7 +26,7 @@ Three days later, my network was infected. His PC had malware that spread throug
 
 ## 🎯 **The Design Philosophy**
 
-Before writing a single firewall rule, I established my core principles:
+Before writing a single firewall rule, I established a clear set of core design principles.
 
 ### 1. **Segmentation by Trust Level**
 Not all devices deserve equal network access. A smart bulb shouldn't have the same privileges as my admin workstation.
@@ -38,7 +38,7 @@ Multiple layers of security. If one control fails, others remain.
 Nothing talks to anything unless I explicitly allow it. Default deny everything.
 
 ### 4. **Intuitive Design**
-The architecture should be self-documenting. IP addresses should tell me immediately what network and trust level.
+The architecture should be self-documenting. IP addresses should immediately indicate the network a device belongs to and its associated trust level.
 
 ---
 
@@ -49,17 +49,17 @@ The architecture should be self-documenting. IP addresses should tell me immedia
 I categorized every device by trust level and function:
 
 **HIGH TRUST:**
-- My **admin workstations** (need to manage everything)
-- **Network storage** (holds critical data)
-- **Network equipment** (switches, access points)
+- My **admin workstations** (responsible for managing and configuring the entire network infrastructure)
+- **Network storage** (containing critical, irreplaceable data, with strict access controls)
+- **Core network infrastructure** (including switches & access points that ensure reliable connectivity & security)
 
 **MEDIUM TRUST:**
-- **Family WiFi devices** (phones, tablets, laptops)
-- **Media servers** (need controlled access to storage)
+- **User devices** (phones, tablets, laptops)
+- **Media servers** (that provide media streaming services with controlled access to network storage)
 
 **LOW TRUST:**
-- **IoT devices** (smart home gadgets with questionable security)
-- **Security cameras** (common botnet targets)
+- **IoT devices** (smart home gadgets & automation systems that often have weak security controls)
+- **Security cameras** (and other surveillance devices which are common botnet targets)
 
 **ZERO TRUST:**
 - **Guest devices** (unknown risk profile)
@@ -67,7 +67,7 @@ I categorized every device by trust level and function:
 
 ### **Phase 2: Professional IP Addressing Scheme**
 
-I designed a systematic addressing plan that makes troubleshooting intuitive:
+I designed a systematic addressing plan that allows network function and intent to be identified at a glance.
 
 | Network          | Subnet        | Purpose                    |
 |------------------|---------------|----------------------------|
@@ -77,7 +77,7 @@ I designed a systematic addressing plan that makes troubleshooting intuitive:
 | Storage          | 10.20.0.0/24  | Protected data             |
 | IoT/Smart Home   | 10.30.0.0/24  | Low-trust automation       |
 | Security/Cameras | 10.40.0.0/24  | No internet access         |
-| Management       | 10.99.0.0/24  | Network equipment          |
+| Management       | 10.99.0.0/24  | Network management devices |
 
 **The logic:** The second octet immediately identifies function. `.10` = users, `.20` = storage, `.30` = IoT, `.40` = security, `.99` = management.
 
@@ -100,17 +100,17 @@ Within each subnet, consistent fourth octet allocation:
 
 ### **The Firewall: Traffic Control Center**
 
-I implemented pfSense as the central policy enforcement point. Every packet crossing between network segments gets evaluated against explicit rule sets.
+I implemented pfSense as the core policy enforcement point, ensuring every packet between network segments is evaluated against explicit security rules.
 
 **My firewall strategy:**
 - **Start with deny all** - Nothing communicates by default
 - **Allow minimum necessary** - Explicitly define required communication
 - **Log extensively** - Visibility into what's happening
-- **Review regularly** - Rules get audited and optimized
+- **Review regularly** - Rules get audited and optimised
 
 ### **Critical Design Decision: Strategic Internet Blocking**
 
-Some devices don't need internet access. This became a key security control.
+Certain devices don’t require internet access, so blocking outbound connections became a key security control to prevent external threats.
 
 **Example: The NAS Protection Strategy**
 
@@ -127,7 +127,7 @@ My network storage (QNAS6 at `10.20.0.10`) holds irreplaceable data—family pho
 **NAS ransomware protection rule:**
 
 - **Action:** Block
-- **Source:** 10.20.0.10 (QNAS6)
+- **Source:** 10.20.0.10 (QNAP6)
 - **Destination:** !RFC1918 (any address outside private networks)
 - **Logging:** Enabled
 - **Description:** "Ransomware protection - prevent NAS from initiating internet connections"
@@ -138,19 +138,20 @@ My network storage (QNAS6 at `10.20.0.10`) holds irreplaceable data—family pho
 - Prevents IoT botnet recruitment
 - Can only communicate with NVR and management network
 - All outbound internet attempts logged and blocked
+
 ---
 
 ## 🛡️ **VLAN Implementation**
 
 ### **The Segmentation Strategy**
 
-Each network segment got its own VLAN (Virtual Local Area Network):
+Each network segment was assigned its own VLAN (Virtual Local Area Network) to ensure proper isolation & security.
 
-- **VLAN 1** (Native) → Core Management
-- **VLAN 10**           → WiFi/Family  
-- **VLAN 20**           → Storage
-- **VLAN 30**           → IoT
-- **VLAN 40**           → Security/Cameras
+- **VLAN 1** (Native) → Core network management and administration, including key infrastructure devices
+- **VLAN 10**           → User endpoints (incl. family Wi-Fi) with restricted resource access 
+- **VLAN 20**           → Network Storage
+- **VLAN 30**           → IoT devices with isolated external-only access and no internal connectivity
+- **VLAN 40**           → Security and surveillance cameras isolated from the internet to prevent compromise
 - **VLAN 99**           → Network Management
 
 **Guest network (`10.1.0.0/24`)** runs on a dedicated physical interface without VLAN tagging—complete isolation at the physical layer.
@@ -187,32 +188,32 @@ I deployed two Netgear GS108TV2 managed switches:
 
 ### **The Trust Hierarchy**
 
-I established clear privilege levels:
+I defined explicit privilege levels for each network segment to control access and ensure security.
 
 **Trust Level 1 - Core Management (10.0.0.0/24)**
-- Full access to all networks
-- Can manage all devices
-- Complete administrative control
+- Full access to all network segments
+- Administration and configuration of all devices
+- Centralized control over the entire network infrastructure
 
 **Trust Level 2 - Storage & Management VLANs**
-- Protected resources (10.20.0.0/24, 10.99.0.0/24)
-- Controlled access from authorized networks
-- Limited internet access or blocked
+- Secure resources, including data storage and network management (10.20.0.0/24, 10.99.0.0/24)
+- Access restricted to authorised networks only
+- Internet access is either controlled or fully blocked
 
 **Trust Level 3 - WiFi/Family (10.10.0.0/24)**
-- Internet access + specific services
-- Can access media and NAS (limited)
-- Cannot manage network equipment
+- Internet access with specific, limited services
+- Restricted access to media and NAS for family devices
+- No management access to network infrastructure
 
 **Trust Level 4 - IoT & Cameras (10.30.0.0/24, 10.40.0.0/24)**
-- Heavily restricted
-- IoT: Internet only, isolated from other networks
-- Cameras: No internet, internal recording only
+- Strictly isolated to minimize risk
+- **IoT devices:** Internet access only, no access to internal networks
+- **Cameras:** No internet access, limited to internal network for recording
 
 **Trust Level 5 - Guest Isolation (10.1.0.0/24)**
-- Internet access ONLY
-- Completely blocked from all internal networks
-- Zero trust zone
+- Internet access ONLY with no access to internal networks
+- Full isolation from all internal network resources
+- **Zero trust zone** ensuring maximum security for external devices
 
 ### **Example Communication Flow:
 ## 🛡️ **VLAN Implementation**
