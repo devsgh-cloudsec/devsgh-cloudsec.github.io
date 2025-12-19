@@ -44,6 +44,11 @@ The architecture should be self-documenting. IP addresses should immediately ind
 
 ## 🏗️ **The Architecture Blueprint**
 
+### Network Topology Diagram
+
+![Network Architecture Diagram](/assets/img/Redesigned_Network_Diagram_With_Segmentation.png)
+_Complete network architecture showing pfSense firewall, VLANs, switches, and all network segments_
+
 ### **Phase 1: Trust-Based Segmentation**
 
 I categorized every device by trust level and function:
