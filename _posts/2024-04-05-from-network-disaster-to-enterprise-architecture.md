@@ -6,7 +6,7 @@ tags: [pfSense, VLAN, Network-Architecture, Security-Design, Enterprise-Network]
 pin: true
 mermaid: true
 image:
-  path: /assets/img/posts/network-architecture/Redesigned_Network_Diagram_With_Segmentation.png
+  path: /assets/img/posts/from-network-disaster-to-enterprise-architecture/Redesigned_Network_Diagram_With_Segmentation.png
   alt: Professional home network architecture with enterprise-grade segmentation
 ---
 
