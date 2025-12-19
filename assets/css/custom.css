@@ -316,12 +316,16 @@ html[data-mode="dark"] .tag:hover {
 }
 
 /* Fix featured image banner - show full image without cropping */
-.post-preview img,
-article > .post-meta > .post-img-wrapper > img,
-#post-wrapper .post-meta .post-img-wrapper > img {
+#post-wrapper .post-tail-wrapper .post-tail-bottom img,
+.preview-img {
   object-fit: contain !important;
-  max-height: 600px !important;
-  width: 100% !important;
+  max-height: none !important;
   height: auto !important;
-  background: #f8f9fa;
+}
+
+header.post-header > img {
+  object-fit: contain !important;
+  max-height: 500px !important;
+  height: auto !important;
+  width: 100% !important;
 }
