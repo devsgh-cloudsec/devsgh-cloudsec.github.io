@@ -88,3 +88,5 @@ jekyll-archives:
   permalinks:
     category: /categories/:name/
     tag: /tags/:name/
+
+# Force rebuild - 2024-12-19
