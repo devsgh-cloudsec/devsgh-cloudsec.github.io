@@ -46,7 +46,7 @@ The architecture should be self-documenting. IP addresses should immediately ind
 
 ### Network Topology Diagram
 
-![Network Architecture Diagram](/assets/img/Redesigned_Network_Diagram_With_Segmentation.png)
+![Network Architecture Diagram](/assets/img/posts/from-network-disaster-to-enterprise-architecture/Redesigned_Network_Diagram_With_Segmentation.png)
 _Complete network architecture showing pfSense firewall, VLANs, switches, and all network segments_
 
 ### **Phase 1: Trust-Based Segmentation**
